@@ -1,0 +1,157 @@
+<tasklibrary>
+	<task name="untar" label="Untar File">
+		<userinput>
+			<required>
+				<field id="inputsrc" type="text" label="Source" />
+				<field id="inputdest" type="text" label="Destination" />
+				<field id="inputcompression" type="dropdown" label="Type of Deployment">
+					<select>
+						<option name="none" value="none">None</option>
+						<option name="gzip" value="gzip">GZIP</option>
+					</select>
+				</field>
+			</required>
+		</userinput>
+		<help>Untar Object</help>
+	</task>
+
+	<task name="unzip" label="Unzip File">
+		<userinput>
+			<required>
+				<field id="inputsrc" type="text" label="Source" />
+				<field id="inputdest" type="text" label="Destination" />
+			</required>
+		</userinput>
+		<help />
+	</task>
+
+	<task name="touch" label="Touch A File">
+		<userinput>
+			<required>
+				<field id="inputfile" type="text" label="File" />
+			</required>
+			<field id="inputverbose" type="checkbox" label="Verbose Output" default="true" />
+			<field id="inputmkdirs" type="checkbox" label="Create nonexistent parent directories" default="false" />
+		</userinput>
+		<help />
+	</task>
+
+	<task name="chmod" label="Chmod">
+		<userinput>
+			<required>
+					<field id="inputfile" type="text" label="File" />
+					<field id="inputdir" type="text" label="Directory" />
+				<field id="inputperm" type="text" label="Permissions" />
+			</required>
+			<field id="verbose" type="checkbox" label="Verbose" default="true" />
+			<field id="maxparallel" type="text" label="Max Parallel" />
+		</userinput>
+		<help />
+	</task>
+
+	<task name="delete" label="Delete File(s)">
+		<userinput>
+			<required>
+					<field id="inputfile" type="text" label="File" />
+					<field id="inputdir" type="text" label="Directory" />
+			</required>
+			<field id="inputverbose" type="checkbox" label="Verbose?" default="false" />
+			<help />
+		</userinput>
+		<help />
+	</task>
+
+	<task name="controlwasserver" label="Control WebSphere Application Server">
+		<userinput>
+			<required>
+				<field id="inputaction" type="dropdown" label="Server Action">
+					<select>
+						<option name="inputaction" value="stop">Stop</option>
+						<option name="inputaction" value="start">Start</option>
+						<option name="inputaction" value="recycle">Restart</option>
+						<option name="inputaction" value="status">Status</option>
+					</select>
+				</field>
+				<field id="inputprofiledir" type="text" label="Profile Directory" />
+				<field id="inputservername" type="text" label="Server Name" />
+			</required>
+			<field id="inputfailonerror" type="checkbox" label="Fail Deploy Process on Failure" default="false" />
+		</userinput>
+		<help />
+	</task>
+
+	<task name="manualsyncnode" label="Synchronize Node Manually">
+		<userinput>
+			<required>
+				<field id="inputprofiledir" type="text" label="Profile Directory" />
+				<field id="inputdmgrhost" type="text" label="Deployment Manager Host" />
+				<field id="inputdmgrsoapport" type="text" label="Deployment Manager Soap Port" />
+			</required>
+		</userinput>
+		<help />
+	</task>
+
+	<task name="deploytowas" label="WAS-Update WebSphere Application"> 
+		<userinput>
+			<required>
+				<field id="inputprofiledirectory" type="text" label="Profile Directory" />
+				<field id="inputappname" type="text" label="Console Application Name" />
+				<field id="inputfile" type="text" label="Location of Ear/Zip File" />
+				<field id="inputdeploytype" type="dropdown" label="Type of Deployment">
+					<select>
+						<option name="inputdeploytype" value="app">Deploy Full Application</option> 
+						<option name="inputdeploytype" value="partialapp">Deploy Partial App</option>
+					</select>
+				</field>
+			</required>
+			<field id="inputnosync" type="checkbox" label="No Node Sync After Deploy" />
+		</userinput>
+		<help />
+	</task>
+
+	<task name="mapwasrole" label="WAS-Map Role to User">
+		<userinput>
+			<field id="inputappname" type="text" label="App Name" />
+			<field id="inputprofiledirectory" type="text" label="DMGR Profile Directory" />
+			<field id="inputrole" type="text" label="Role" />
+			<field id="inputeveryone" type="checkbox" label="Everyone?" />
+			<field id="inputallauthusers" type="checkbox" label="All Authenticated Users?" />
+			<field id="inputmappedusers" type="text" label="Mapped Users" />
+			<field id="inputmappedgroups" type="text" label="Mapped Groups" />
+		</userinput>
+		<help />
+	</task>
+
+	<task name="copy" label="Copy file">
+		<userinput>
+			<required>
+				<field id="inputfile" type="text" label="File" />
+				<field id="inputtofile" type="text" label="To File" />
+				<field id="inputtodir" type="text" label="To Directory" />
+			</required>
+		</userinput>
+		<help />
+	</task>
+
+	<task name="oscommand" label="Run OS Command">
+		<userinput>
+			<required>
+				<field id="inputexecutable" type="text" label="Execuable" />
+				<field id="inputargline" type="text" label="Arguments" />
+				<field id="inputfailonerror" type="checkbox" label="Stop Ant Execution on Failure" default="true" />
+			</required>
+		</userinput>
+		<help />
+	</task>
+	<task name="testinQA" label="Run qA Test">
+		<userinput>
+			<required>
+				<field id="inputexecutable" type="text" label="Execuable" />
+				<field id="inputargline" type="text" label="Arguments" />
+				<field id="inputfailonerror" type="checkbox" label="Stop Ant Execution on Failure" default="true" />
+			</required>
+		</userinput>
+		<help />
+	</task>
+</tasklibrary>
+
